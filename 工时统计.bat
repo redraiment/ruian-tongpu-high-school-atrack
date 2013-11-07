@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set /P from=开始日期(YYYY-MM-DD): 
-set /P to=结束日期(YYYY-MM-DD): 
+set /P from=开始日期(YYYYMMDD): 
+set /P to=结束日期(YYYYMMDD): 
 
 set filelist=data\employee.txt
 for /F %%f in ('date-range %from% %to%') do (

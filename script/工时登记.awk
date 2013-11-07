@@ -13,7 +13,7 @@ FILENAME == "-" {
     id = $1;
     if (id in card) {
         print card[id]" "systime() >> fn;
-        print "你好，"card[id]"！";
+        print "你好，"card[id]"！现在是北京时间"strftime("%Y年%m月%d日%H点%M分");
     } else if (id) {
         print id"不存在，请重新输入";
     }

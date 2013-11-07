@@ -1,3 +1,10 @@
+function convert(d) {
+    year = int(d / 10000);
+    month = int(d % 10000 / 100);
+    day = int(d % 100);
+    return sprintf("%04d-%02d-%02d", year, month, day);
+}
+
 function is_leap_year(year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
@@ -30,6 +37,8 @@ BEGIN {
     days[1,3] = 31; days[1,6] = 30; days[1,7] = 31; days[1,8] = 31;
     days[1,9] = 30; days[1,10] = 31; days[1,11] = 30; days[1,12] = 31;
 
+    from = convert(from);
+    to = convert(to);
     while (from <= to) {
         print from;
         from = tomorrow(from);
