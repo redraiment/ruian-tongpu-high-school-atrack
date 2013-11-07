@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 set /P from=开始日期(YYYYMMDD): 
 set /P to=结束日期(YYYYMMDD): 
 
-set filelist=data\employee.txt
+set filelist=
 for /F %%f in ('date-range %from% %to%') do (
   if exist data\工时\%%f.txt (
     set filelist=!filelist! data\工时\%%f.txt
