@@ -1,16 +1,16 @@
 function statistics() {
     amount = 150.0;
     if (count > 0) {
-        for (i = 0; i < count; i++) {
-            total[employee[i]] += amount / count;
+        for (name in employee) {
+            total[name] += amount / count;
         }
         count = 0;
     }
+    delete employee;
 }
 
 BEGIN {
     count = 0;
-
     printf("%-8s %s\n", "ÐÕÃû", "²¹Ìù(Ôª)");
 }
 
@@ -18,8 +18,8 @@ FNR == 1 {
     statistics();
 }
 
-{
-    employee[count] = $0;
+! employee[$1] {
+    employee[$1] = 1;
     count++;
 }
 
